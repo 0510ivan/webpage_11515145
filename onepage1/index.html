@@ -3,610 +3,2286 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="藍天咖啡，為手沖咖啡愛好者挑選當季精品咖啡豆，讓每一杯都清澈、明亮、值得細品。">
-  <title>藍天咖啡｜讓風味，慢慢抵達</title>
+  <meta name="description" content="毛孩家園 - 推廣以領養代替購買，提供待領養狗狗與貓咪資訊、線上領養申請表單填寫，以及專業完整的養寵新手教學文章。">
+  <title>毛孩家園｜以領養代替購買，陪毛孩找到溫暖的家</title>
+  
+  <!-- Google Fonts: 圓潤溫馨與親切的字體 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --navy: #062742;
-      --blue: #0c5b95;
-      --sky: #75c6e8;
-      --mist: #eaf5f7;
-      --cream: #fbfaf6;
-      --ink: #122534;
-      --muted: #607482;
-      --line: #d7e4e8;
-      --sand: #e5b66b;
-      --shadow: 0 18px 50px rgba(6, 39, 66, .13);
+      /* 品牌規格顏色：暖橙色 & 森林綠 */
+      --warm-orange: #ff7838;
+      --warm-orange-hover: #f15d18;
+      --warm-orange-light: #fff3ec;
+      --warm-orange-badge: #ffe4d6;
+      
+      --forest-green: #23583d;
+      --forest-green-light: #347a57;
+      --forest-green-soft: #eaf5ee;
+      --forest-green-tint: #f2f9f4;
+      
+      --accent-yellow: #f59e0b;
+      --bg-cream: #fffdfa;
+      --bg-card: #ffffff;
+      --border-color: #eeded5;
+      
+      --text-main: #2b2520;
+      --text-muted: #6e645e;
+      --text-light: #9c928c;
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-full: 9999px;
+      
+      --shadow-sm: 0 4px 12px rgba(255, 120, 56, 0.08);
+      --shadow-md: 0 10px 25px rgba(35, 88, 61, 0.08);
+      --shadow-lg: 0 18px 40px rgba(43, 37, 32, 0.1);
+      --transition: all 0.28s ease;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      margin: 0;
-      background: var(--cream);
-      color: var(--ink);
-      font-family: "Noto Sans TC", sans-serif;
-      font-size: 16px;
+      font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-main);
       line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
-    a { color: inherit; text-decoration: none; }
-    button, input { font: inherit; }
-    button { cursor: pointer; }
-    :focus-visible { outline: 3px solid var(--sky); outline-offset: 4px; }
 
-    .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 0 0 18px;
-      color: var(--blue);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .18em;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
-    .eyebrow::before { width: 28px; height: 1px; background: currentColor; content: ""; }
-    .section-title {
-      margin: 0;
-      font-family: "Noto Serif TC", serif;
-      font-size: clamp(30px, 4vw, 46px);
-      font-weight: 700;
-      letter-spacing: .045em;
-      line-height: 1.28;
-    }
-    .accent { color: var(--blue); }
-    .section-copy { margin: 18px 0 0; color: var(--muted); }
-    .button, .text-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 50px;
-      padding: 11px 23px;
-      border: 1px solid transparent;
-      border-radius: 2px;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: .03em;
-      transition: background-color .25s ease, color .25s ease, border-color .25s ease, transform .25s ease;
-    }
-    .button:hover, .text-link:hover { transform: translateY(-2px); }
-    .button-primary { background: var(--sand); color: var(--navy); }
-    .button-primary:hover { background: #f0ca84; }
-    .button-outline { border-color: rgba(255,255,255,.8); color: #fff; }
-    .button-outline:hover { background: #fff; color: var(--navy); }
 
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* 頂部通知列 */
+    .top-announcement {
+      background: var(--forest-green);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 16px;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+    .top-announcement strong {
+      color: #ffd27d;
+    }
+
+    /* 導覽列 Header */
     .site-header {
-      position: absolute;
-      z-index: 10;
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
-      border-bottom: 1px solid rgba(255,255,255,.27);
+      z-index: 100;
+      background: rgba(255, 253, 250, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
     }
-    .navbar {
+
+    .nav-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 78px;
-      gap: 24px;
+      height: 76px;
     }
-    .brand { display: inline-flex; align-items: center; gap: 10px; color: #fff; }
-    .brand-mark {
-      display: grid;
-      width: 29px;
-      height: 29px;
-      place-items: center;
-      border: 1px solid var(--sky);
-      border-radius: 50%;
-      color: var(--sky);
-      font-family: "Playfair Display", serif;
-      font-size: 17px;
-      line-height: 1;
-    }
-    .brand-copy { display: grid; line-height: 1.1; }
-    .brand-copy strong { font-size: 14px; font-weight: 600; letter-spacing: .08em; }
-    .brand-copy small { margin-top: 4px; color: var(--sky); font-size: 8px; letter-spacing: .15em; }
-    .nav-links { display: flex; align-items: center; gap: 25px; }
-    .nav-links a { position: relative; color: rgba(255,255,255,.92); font-size: 13px; font-weight: 500; white-space: nowrap; }
-    .nav-links a:not(.nav-cta)::after {
-      position: absolute;
-      right: 0;
-      bottom: -7px;
-      width: 0;
-      height: 1px;
-      background: var(--sky);
-      content: "";
-      transition: width .25s ease;
-    }
-    .nav-links a:not(.nav-cta):hover::after { right: auto; left: 0; width: 100%; }
-    .nav-links .nav-cta { padding: 7px 12px; border: 1px solid rgba(255,255,255,.78); }
-    .nav-links .nav-cta:hover { background: #fff; color: var(--navy); }
-    .menu-toggle { display: none; padding: 4px; border: 0; background: transparent; color: #fff; font-size: 24px; line-height: 1; }
 
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--forest-green);
+      letter-spacing: 0.04em;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-full);
+      background: var(--warm-orange);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .brand-logo:hover .brand-icon {
+      transform: scale(1.08) rotate(-6deg);
+    }
+
+    .brand-title small {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--warm-orange);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: -2px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-main);
+      padding: 6px 2px;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--warm-orange);
+      transition: width 0.25s ease;
+      border-radius: 2px;
+    }
+
+    .nav-link:hover {
+      color: var(--warm-orange);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      background: var(--warm-orange);
+      color: #ffffff !important;
+      border-radius: var(--radius-full);
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(255, 120, 56, 0.3);
+      transition: var(--transition);
+    }
+
+    .nav-btn:hover {
+      background: var(--warm-orange-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(255, 120, 56, 0.4);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 26px;
+      color: var(--forest-green);
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    /* 共用通用類別 */
+    .section {
+      padding: 85px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 54px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 14px;
+    }
+
+    .badge-orange {
+      background: var(--warm-orange-badge);
+      color: var(--warm-orange);
+    }
+
+    .badge-green {
+      background: var(--forest-green-soft);
+      color: var(--forest-green);
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 900;
+      color: var(--forest-green);
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-size: 15px;
+      font-weight: 700;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: var(--transition);
+      letter-spacing: 0.02em;
+    }
+
+    .btn-orange {
+      background: var(--warm-orange);
+      color: #ffffff;
+      box-shadow: 0 6px 20px rgba(255, 120, 56, 0.28);
+    }
+
+    .btn-orange:hover {
+      background: var(--warm-orange-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(255, 120, 56, 0.38);
+    }
+
+    .btn-green {
+      background: var(--forest-green);
+      color: #ffffff;
+      box-shadow: 0 6px 20px rgba(35, 88, 61, 0.25);
+    }
+
+    .btn-green:hover {
+      background: var(--forest-green-light);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(35, 88, 61, 0.35);
+    }
+
+    .btn-outline-green {
+      background: transparent;
+      color: var(--forest-green);
+      border-color: var(--forest-green);
+    }
+
+    .btn-outline-green:hover {
+      background: var(--forest-green-soft);
+      transform: translateY(-3px);
+    }
+
+    /* Hero 區域 */
     .hero {
       position: relative;
-      display: flex;
-      min-height: 704px;
+      background: linear-gradient(135deg, #fff7ed 0%, #fdf5ec 50%, #f4faf6 100%);
+      padding: 70px 0 90px;
       overflow: hidden;
-      align-items: stretch;
-      background:
-        radial-gradient(circle at 85% 26%, rgba(117,198,232,.35) 0, rgba(117,198,232,.08) 18%, transparent 43%),
-        linear-gradient(135deg, #062742 0%, #062742 58%, #0a4168 100%);
-      color: #fff;
     }
-    .hero::after {
+
+    .hero-decor-1 {
       position: absolute;
-      z-index: 0;
-      right: -18vw;
-      bottom: -22vw;
-      width: 50vw;
-      height: 50vw;
-      border: 1px solid rgba(117,198,232,.13);
-      border-radius: 50%;
-      content: "";
+      top: -40px;
+      right: -40px;
+      width: 280px;
+      height: 280px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 120, 56, 0.06);
+      pointer-events: none;
     }
-    .hero-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.02fr .98fr;
-      gap: 45px;
-      align-items: center;
-      padding-top: 122px;
-      padding-bottom: 72px;
-    }
-    .hero-content { max-width: 560px; }
-    .hero .eyebrow { color: var(--sky); }
-    .hero-title {
-      max-width: 540px;
-      margin: 0;
-      font-family: "Noto Serif TC", serif;
-      font-size: clamp(42px, 5.5vw, 68px);
-      font-weight: 700;
-      letter-spacing: .04em;
-      line-height: 1.22;
-    }
-    .hero-title .sky-word { color: var(--sky); }
-    .hero-lede { max-width: 490px; margin: 25px 0 0; color: rgba(255,255,255,.76); }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
-    .hero-meta { margin: 27px 0 0; color: var(--sky); font-size: 10px; font-weight: 700; letter-spacing: .18em; }
-    .scroll-note { display: flex; align-items: center; gap: 10px; margin: 53px 0 0; color: rgba(255,255,255,.55); font-size: 9px; letter-spacing: .18em; }
-    .scroll-note::before { width: 38px; height: 1px; background: rgba(255,255,255,.45); content: ""; }
 
-    .hero-art {
-      position: relative;
-      width: min(100%, 400px);
-      height: 300px;
-      min-height: 0;
-      margin-left: auto;
-      overflow: visible;
-      aspect-ratio: auto;
-      border: 0;
-      background: transparent;
-      box-shadow: none;
-    }
-    .hero-photo { width: 400px; height: 300px; object-fit: cover; box-shadow: 24px 24px 0 rgba(117,198,232,.13), var(--shadow); }
-    .window-frame { position: absolute; inset: 0; border: 12px solid #e8d4ae; box-shadow: inset 0 0 0 2px rgba(6,39,66,.18); }
-    .window-frame::before, .window-frame::after { position: absolute; background: rgba(6,39,66,.25); content: ""; }
-    .window-frame::before { top: 0; bottom: 0; left: 49%; width: 4px; }
-    .window-frame::after { top: 46%; right: 0; left: 0; height: 4px; }
-    .sun { position: absolute; top: 16%; right: 17%; width: 77px; height: 77px; border-radius: 50%; background: #fff2be; box-shadow: 0 0 45px 22px rgba(255,228,150,.42); }
-    .mountain { position: absolute; bottom: 28%; width: 75%; height: 36%; clip-path: polygon(0 100%, 35% 15%, 48% 50%, 63% 0, 100% 100%); background: #497b83; opacity: .9; }
-    .mountain.one { left: -12%; }
-    .mountain.two { right: -27%; bottom: 27%; background: #30616b; transform: scaleX(-1); opacity: .75; }
-    .tabletop { position: absolute; right: -8%; bottom: -7%; left: -8%; height: 33%; background: linear-gradient(#643e2e 0%, #3d251e 100%); transform: perspective(200px) rotateX(10deg); }
-    .chair { position: absolute; right: 7%; bottom: 18%; width: 100px; height: 112px; border: 12px solid #543126; border-bottom: 0; border-radius: 48px 48px 0 0; opacity: .8; }
-    .chair::after { position: absolute; bottom: -75px; left: 14px; width: 8px; height: 75px; background: #543126; box-shadow: 53px 0 #543126; content: ""; }
-    .coffee-vessel { position: absolute; bottom: 14%; left: 28%; width: 112px; height: 105px; }
-    .coffee-vessel .dripper { position: absolute; top: 0; left: 29px; width: 53px; height: 45px; border: 3px solid #d8e7e1; border-radius: 5px 5px 22px 22px; background: linear-gradient(135deg, rgba(222,246,240,.75), rgba(124,180,181,.2)); clip-path: polygon(0 0, 100% 0, 78% 100%, 22% 100%); }
-    .coffee-vessel .carafe { position: absolute; bottom: 0; left: 17px; width: 78px; height: 68px; border: 3px solid #d8e7e1; border-radius: 10px 10px 23px 23px; background: linear-gradient(to top, rgba(56,29,19,.82) 0 38%, rgba(190,228,227,.24) 39%); }
-    .coffee-vessel .carafe::before { position: absolute; top: -20px; left: 24px; width: 26px; height: 22px; border: 3px solid #d8e7e1; border-bottom: 0; border-radius: 50% 50% 0 0; content: ""; }
-    .steam { position: absolute; bottom: 59%; left: 49%; width: 23px; height: 58px; border-left: 2px solid rgba(255,255,255,.63); border-radius: 50%; transform: rotate(16deg); }
-    .steam::after { position: absolute; top: -5px; left: 14px; width: 18px; height: 48px; border-right: 2px solid rgba(255,255,255,.44); border-radius: 50%; content: ""; }
-    .art-label { position: absolute; z-index: 3; right: -11px; top: 42%; display: grid; gap: 2px; padding: 10px 11px; border-left: 2px solid var(--sand); background: rgba(6,39,66,.86); color: #fff; }
-    .art-label strong { font-family: "Playfair Display", serif; font-size: 22px; line-height: 1; }
-    .art-label span { color: var(--sky); font-size: 9px; letter-spacing: .09em; }
-    .art-label small { color: rgba(255,255,255,.72); font-size: 9px; }
-
-    .story { padding: 115px 0 120px; background: #fff; }
-    .story-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(45px, 9vw, 105px); align-items: center; }
-    .story-visual { position: relative; min-height: 400px; }
-    .story-seal {
-      display: grid;
+    .hero-decor-2 {
+      position: absolute;
+      bottom: -60px;
+      left: -60px;
       width: 320px;
       height: 320px;
-      place-content: center;
-      margin: 0 auto;
-      border: 1px solid var(--sky);
-      border-radius: 50%;
-      background: radial-gradient(circle, #fff 0 55%, #eaf5f7 56% 60%, #fff 61%);
-      color: var(--navy);
-      text-align: center;
+      border-radius: var(--radius-full);
+      background: rgba(35, 88, 61, 0.05);
+      pointer-events: none;
     }
-    .story-seal::before { display: block; margin-bottom: 14px; color: var(--blue); content: "B"; font-family: "Playfair Display", serif; font-size: 73px; line-height: 1; }
-    .story-seal strong { font-family: "Noto Serif TC", serif; font-size: 18px; letter-spacing: .09em; }
-    .story-seal span { margin-top: 10px; color: var(--blue); font-size: 9px; font-weight: 700; letter-spacing: .15em; }
-    .note-card { position: absolute; right: 0; bottom: 0; width: min(225px, 57%); padding: 25px; background: var(--navy); color: #fff; box-shadow: var(--shadow); }
-    .note-card p:first-child { margin: 0; color: var(--sky); font-size: 10px; font-weight: 700; letter-spacing: .16em; }
-    .note-card p:last-child { margin: 12px 0 0; font-family: "Noto Serif TC", serif; font-size: 16px; line-height: 1.65; }
-    .story-content p { margin: 19px 0 0; color: var(--muted); }
-    .story-content p + p { margin-top: 15px; }
-    .underlined-link { display: inline-flex; margin-top: 27px; padding-bottom: 5px; border-bottom: 1px solid var(--blue); color: var(--blue); font-size: 14px; font-weight: 600; transition: gap .2s ease; }
-    .underlined-link:hover { gap: 8px; }
 
-    .coffee { padding: 112px 0 120px; background: var(--mist); }
-    .coffee-heading { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 43px; }
-    .coffee-heading .section-copy { max-width: 365px; }
-    .coffee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; }
-    .coffee-card {
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content {
+      max-width: 580px;
+    }
+
+    .hero-title {
+      font-size: clamp(34px, 5vw, 50px);
+      font-weight: 900;
+      color: var(--forest-green);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+
+    .hero-title span {
+      color: var(--warm-orange);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-desc {
+      font-size: 17px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .stat-number {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--warm-orange);
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .hero-visual {
       position: relative;
       display: flex;
-      min-height: 384px;
+      justify-content: center;
+    }
+
+    .hero-card-main {
+      position: relative;
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      box-shadow: var(--shadow-lg);
+      border: 3px solid #ffffff;
       overflow: hidden;
-      flex-direction: column;
-      padding: 31px 29px 25px;
-      background: var(--navy);
-      color: #fff;
-      box-shadow: var(--shadow);
+      display: inline-block;
+      max-width: 100%;
     }
-    .coffee-card:nth-child(2) { background: #106396; }
-    .coffee-card:nth-child(3) { background: #164c68; }
-    .coffee-card::after { position: absolute; right: -73px; bottom: -90px; width: 230px; height: 230px; border: 25px solid rgba(117,198,232,.15); border-radius: 50%; content: ""; }
-    .coffee-card > * { position: relative; z-index: 1; }
-    .bean-no { margin: 0; color: var(--sky); font-family: "Playfair Display", serif; font-size: 14px; font-weight: 600; letter-spacing: .11em; }
-    .origin { margin: 19px 0 5px; color: rgba(255,255,255,.67); font-size: 10px; font-weight: 700; letter-spacing: .13em; }
-    .bean-name { margin: 0; font-family: "Noto Serif TC", serif; font-size: 24px; font-weight: 700; letter-spacing: .04em; line-height: 1.35; }
-    .flavour { margin: 14px 0 0; color: rgba(255,255,255,.79); font-size: 14px; }
-    .coffee-bottom { display: flex; align-items: center; justify-content: space-between; gap: 13px; margin-top: auto; padding-top: 23px; border-top: 1px solid rgba(255,255,255,.22); }
-    .price { font-family: "Playfair Display", serif; font-size: 14px; white-space: nowrap; }
-    .save-button { padding: 5px 0; border: 0; background: transparent; color: #fff; font-size: 13px; font-weight: 600; white-space: nowrap; transition: color .2s ease; }
-    .save-button:hover { color: var(--sand); }
 
-    .brew { padding: 115px 0 120px; background: #fff; }
-    .brew-grid { display: grid; grid-template-columns: .93fr 1.07fr; gap: clamp(44px, 7vw, 90px); align-items: center; }
-    .brew-art { position: relative; min-height: 448px; overflow: hidden; background: linear-gradient(138deg, #eef9fa 0 50%, #d6edf3 50% 100%); }
-    .brew-art::before { position: absolute; top: 33px; left: 30px; width: 70px; height: 35px; border-top: 1px solid var(--sky); border-left: 1px solid var(--sky); content: ""; }
-    .brew-art::after { position: absolute; top: 49px; left: 46px; width: 70px; height: 35px; border-top: 1px solid var(--sky); border-left: 1px solid var(--sky); content: ""; }
-    .pour-rings { position: absolute; top: 50%; left: 50%; width: 238px; height: 238px; border: 1px solid rgba(12,91,149,.35); border-radius: 50%; transform: translate(-50%,-46%); }
-    .pour-rings::before, .pour-rings::after { position: absolute; border: 1px solid rgba(12,91,149,.28); border-radius: 50%; content: ""; }
-    .pour-rings::before { inset: 27px; }
-    .pour-rings::after { inset: 57px; }
-    .pour-line { position: absolute; top: 39px; left: 50%; width: 1px; height: 140px; background: var(--blue); transform: rotate(24deg); transform-origin: bottom; }
-    .v60 { position: absolute; top: 50%; left: 50%; width: 140px; height: 105px; border: 3px solid var(--navy); border-top-width: 4px; background: rgba(255,255,255,.7); clip-path: polygon(0 0, 100% 0, 74% 100%, 26% 100%); transform: translate(-50%,-33%); }
-    .v60::after { position: absolute; bottom: -61px; left: 35px; width: 64px; height: 58px; border: 3px solid var(--navy); border-radius: 8px 8px 19px 19px; background: linear-gradient(to top, #6c3924 0 31%, rgba(255,255,255,.5) 32%); content: ""; }
-    .brew-caption { position: absolute; right: 27px; bottom: 25px; display: grid; color: var(--navy); text-align: right; }
-    .brew-caption strong { font-family: "Playfair Display", serif; font-size: 21px; letter-spacing: .05em; }
-    .brew-caption span { font-size: 10px; font-weight: 700; letter-spacing: .12em; }
-    .brew-content .section-copy { max-width: 530px; }
-    .brew-steps { margin-top: 28px; border-top: 1px solid var(--line); }
-    .brew-step { display: grid; grid-template-columns: 55px 1fr; gap: 14px; padding: 19px 0; border-bottom: 1px solid var(--line); }
-    .step-no { color: var(--blue); font-family: "Playfair Display", serif; font-size: 25px; font-weight: 600; line-height: 1; }
-    .brew-step h3 { margin: 0; font-family: "Noto Serif TC", serif; font-size: 17px; letter-spacing: .03em; }
-    .brew-step p { margin: 5px 0 0; color: var(--muted); font-size: 14px; }
+    .hero-img-wrap {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      width: 400px;
+      height: 300px;
+      max-width: 100%;
+      background: #fed7aa;
+    }
 
-    .visit { position: relative; overflow: hidden; padding: 116px 0; background: var(--navy); color: #fff; text-align: center; }
-    .visit::before, .visit::after { position: absolute; width: 380px; height: 380px; border: 1px solid rgba(117,198,232,.19); border-radius: 50%; content: ""; }
-    .visit::before { top: -250px; left: -145px; }
-    .visit::after { right: -165px; bottom: -260px; width: 450px; height: 450px; border-width: 22px; opacity: .45; }
-    .visit .wrap { position: relative; z-index: 1; max-width: 730px; }
-    .visit .eyebrow { justify-content: center; color: var(--sky); }
-    .visit .section-title { max-width: 670px; margin-inline: auto; }
-    .visit .section-copy { max-width: 535px; margin-inline: auto; color: rgba(255,255,255,.72); }
-    .subscribe-form { display: flex; margin: 34px auto 0; padding: 5px; border: 1px solid rgba(255,255,255,.58); }
-    .subscribe-form input { min-width: 0; flex: 1; padding: 11px 15px; border: 0; outline: 0; background: transparent; color: #fff; }
-    .subscribe-form input::placeholder { color: rgba(255,255,255,.58); }
-    .subscribe-form button { min-height: 48px; padding: 10px 20px; border: 0; border-radius: 1px; background: var(--sand); color: var(--navy); font-size: 14px; font-weight: 700; transition: background .2s ease; }
-    .subscribe-form button:hover { background: #f1ca83; }
+    .hero-img-wrap img {
+      width: 400px;
+      height: 300px;
+      max-width: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
 
-    .site-footer { padding: 65px 0 25px; background: #031c31; color: rgba(255,255,255,.68); }
-    .footer-grid { display: grid; grid-template-columns: 1.45fr .75fr .9fr; gap: 54px; padding-bottom: 46px; }
-    .footer-brand .brand { margin-bottom: 18px; }
-    .footer-brand p { max-width: 355px; margin: 0; font-size: 14px; }
-    .footer-heading { margin: 3px 0 17px; color: var(--sky); font-size: 11px; font-weight: 700; letter-spacing: .15em; }
-    .footer-links, .footer-contact { display: grid; gap: 10px; font-size: 14px; }
-    .footer-links a:hover, .footer-contact a:hover { color: #fff; }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 18px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.17); color: rgba(255,255,255,.47); font-size: 10px; letter-spacing: .1em; }
+    .hero-card-main:hover .hero-img-wrap img {
+      transform: scale(1.04);
+    }
 
-    .toast {
-      position: fixed;
-      z-index: 20;
-      right: 22px;
-      bottom: 22px;
-      max-width: min(360px, calc(100% - 44px));
-      padding: 13px 18px;
-      border-left: 3px solid var(--sand);
-      background: var(--navy);
-      box-shadow: var(--shadow);
-      color: #fff;
-      font-size: 14px;
+    .hero-float-card {
+      position: absolute;
+      bottom: -15px;
+      left: -20px;
+      background: #ffffff;
+      padding: 14px 20px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-left: 5px solid var(--forest-green);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .hero-float-icon {
+      font-size: 28px;
+    }
+
+    .hero-float-text b {
+      display: block;
+      font-size: 15px;
+      color: var(--forest-green);
+    }
+
+    .hero-float-text span {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* 理念核心：以領養代替購買 */
+    .mission {
+      background: #ffffff;
+      position: relative;
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 28px;
+    }
+
+    .mission-card {
+      background: var(--bg-cream);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 34px 26px;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mission-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--warm-orange);
       opacity: 0;
+      transition: var(--transition);
+    }
+
+    .mission-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(255, 120, 56, 0.4);
+    }
+
+    .mission-card:hover::before {
+      opacity: 1;
+    }
+
+    .mission-icon {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 20px;
+      border-radius: var(--radius-full);
+      display: grid;
+      place-items: center;
+      font-size: 32px;
+    }
+
+    .mission-card:nth-child(1) .mission-icon { background: var(--warm-orange-badge); color: var(--warm-orange); }
+    .mission-card:nth-child(2) .mission-icon { background: var(--forest-green-soft); color: var(--forest-green); }
+    .mission-card:nth-child(3) .mission-icon { background: #fef3c7; color: #b45309; }
+    .mission-card:nth-child(4) .mission-icon { background: #e0f2fe; color: #0284c7; }
+
+    .mission-card h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--forest-green);
+      margin-bottom: 12px;
+    }
+
+    .mission-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* 待領養寵物列表 */
+    .pets-section {
+      background: var(--forest-green-tint);
+    }
+
+    .pet-filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 10px 24px;
+      border-radius: var(--radius-full);
+      border: 1.5px solid var(--border-color);
+      background: #ffffff;
+      color: var(--text-main);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover {
+      border-color: var(--warm-orange);
+      color: var(--warm-orange);
+    }
+
+    .filter-btn.active {
+      background: var(--warm-orange);
+      color: #ffffff;
+      border-color: var(--warm-orange);
+      box-shadow: 0 4px 12px rgba(255, 120, 56, 0.28);
+    }
+
+    .pets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .pet-card {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pet-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(35, 88, 61, 0.2);
+    }
+
+    .pet-img-container {
+      position: relative;
+      width: 100%;
+      height: 230px;
+      overflow: hidden;
+      background: #e2e8f0;
+    }
+
+    .pet-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .pet-card:hover .pet-img-container img {
+      transform: scale(1.06);
+    }
+
+    .pet-type-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(4px);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--forest-green);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .pet-fav-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.95);
+      border: none;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-size: 17px;
+      color: #94a3b8;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+    }
+
+    .pet-fav-btn:hover, .pet-fav-btn.active {
+      color: #ef4444;
+      transform: scale(1.1);
+    }
+
+    .pet-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .pet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+
+    .pet-name {
+      font-size: 21px;
+      font-weight: 900;
+      color: var(--forest-green);
+    }
+
+    .pet-meta {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--warm-orange);
+    }
+
+    .pet-breed {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .pet-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .pet-tag {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: var(--forest-green-soft);
+      color: var(--forest-green);
+      font-weight: 600;
+    }
+
+    .pet-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .pet-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    .pet-btn-detail {
+      padding: 9px 0;
+      border: 1px solid var(--forest-green);
+      background: #ffffff;
+      color: var(--forest-green);
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .pet-btn-detail:hover {
+      background: var(--forest-green-soft);
+    }
+
+    .pet-btn-adopt {
+      padding: 9px 0;
+      border: 1px solid var(--warm-orange);
+      background: var(--warm-orange);
+      color: #ffffff;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .pet-btn-adopt:hover {
+      background: var(--warm-orange-hover);
+    }
+
+    /* 領養流程說明 */
+    .process {
+      background: #ffffff;
+    }
+
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+
+    .process-card {
+      position: relative;
+      text-align: center;
+      padding: 24px 18px;
+    }
+
+    .process-step-num {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 18px;
+      border-radius: var(--radius-full);
+      background: var(--forest-green);
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 900;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 6px 16px rgba(35, 88, 61, 0.25);
+      position: relative;
+      z-index: 2;
+    }
+
+    .process-card:nth-child(even) .process-step-num {
+      background: var(--warm-orange);
+      box-shadow: 0 6px 16px rgba(255, 120, 56, 0.25);
+    }
+
+    .process-card h4 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--forest-green);
+      margin-bottom: 8px;
+    }
+
+    .process-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* 養寵新手教學文章 */
+    .guides-section {
+      background: linear-gradient(180deg, #fffdfa 0%, #fff7ed 100%);
+    }
+
+    .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 28px;
+    }
+
+    .guide-card {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .guide-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(255, 120, 56, 0.4);
+    }
+
+    .guide-cover {
+      height: 170px;
+      overflow: hidden;
+      background: #f1f5f9;
+      position: relative;
+    }
+
+    .guide-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .guide-card:hover .guide-cover img {
+      transform: scale(1.08);
+    }
+
+    .guide-tag {
+      position: absolute;
+      bottom: 10px;
+      left: 12px;
+      padding: 3px 10px;
+      background: rgba(35, 88, 61, 0.88);
+      backdrop-filter: blur(4px);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 4px;
+    }
+
+    .guide-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .guide-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--forest-green);
+      line-height: 1.45;
+      margin-bottom: 10px;
+      transition: color 0.2s ease;
+    }
+
+    .guide-card:hover .guide-title {
+      color: var(--warm-orange);
+    }
+
+    .guide-snippet {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+
+    .guide-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--warm-orange);
+      font-weight: 700;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* 領養申請表單 */
+    .form-section {
+      background: #ffffff;
+      position: relative;
+    }
+
+    .form-wrapper {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--bg-cream);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 45px 50px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-intro {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .form-intro h3 {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--forest-green);
+      margin-bottom: 8px;
+    }
+
+    .form-intro p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-label {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--forest-green);
+    }
+
+    .form-label span.req {
+      color: #ef4444;
+      margin-left: 3px;
+    }
+
+    .form-control {
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border-color);
+      background: #ffffff;
+      font-size: 14px;
+      color: var(--text-main);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      border-color: var(--warm-orange);
+      box-shadow: 0 0 0 3px rgba(255, 120, 56, 0.15);
+    }
+
+    textarea.form-control {
+      min-height: 105px;
+      resize: vertical;
+    }
+
+    .radio-group, .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-top: 4px;
+    }
+
+    .radio-label, .checkbox-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13.5px;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+
+    .agreement-box {
+      background: var(--forest-green-soft);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      margin: 10px 0 20px;
+      font-size: 12.5px;
+      color: var(--forest-green);
+      line-height: 1.7;
+    }
+
+    .form-submit-btn {
+      width: 100%;
+      padding: 16px;
+      font-size: 16px;
+    }
+
+    /* FAQ 手風琴 */
+    .faq-section {
+      background: var(--forest-green-tint);
+    }
+
+    .faq-container {
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-question {
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--forest-green);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .faq-icon {
+      font-size: 20px;
+      transition: transform 0.25s ease;
+      color: var(--warm-orange);
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      padding: 0 22px;
+      background: #fafdfb;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 250px;
+      padding: 0 22px 20px;
+    }
+
+    /* 頁尾 Footer */
+    .site-footer {
+      background: var(--forest-green);
+      color: #ffffff;
+      padding: 70px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-brand h4 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .footer-brand p {
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .footer-col h5 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffd27d;
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 13.5px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.8);
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+      padding-left: 5px;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      gap: 10px;
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* 彈跳視窗 Modal (通用) */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(5px);
+      z-index: 999;
+      display: none;
+      place-items: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: grid;
+    }
+
+    .modal-box {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      max-width: 620px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 34px;
+      position: relative;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+      animation: modalPop 0.28s ease;
+    }
+
+    @keyframes modalPop {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      background: #f1f5f9;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      color: var(--text-muted);
+      transition: var(--transition);
+    }
+
+    .modal-close:hover {
+      background: #e2e8f0;
+      color: var(--text-main);
+    }
+
+    /* Toast 通知 */
+    .toast-msg {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--forest-green);
+      color: #ffffff;
+      padding: 14px 22px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      border-left: 5px solid var(--warm-orange);
+      font-size: 14px;
+      font-weight: 600;
+      z-index: 1000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s ease;
       pointer-events: none;
-      transform: translateY(12px);
-      transition: opacity .22s ease, transform .22s ease;
     }
-    .toast.show { opacity: 1; transform: translateY(0); }
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    @media (max-width: 820px) {
-      .navbar { position: relative; }
-      .menu-toggle { display: block; }
-      .nav-links {
-        position: absolute;
-        top: 100%;
-        right: -24px;
-        left: -24px;
-        display: grid;
-        max-height: 0;
-        overflow: hidden;
-        gap: 0;
-        background: #05233c;
-        transition: max-height .32s ease;
+    .toast-msg.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* 響應式 RWD 斷點設定 */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
       }
-      .nav-links.open { max-height: 300px; }
-      .nav-links a { padding: 12px 24px; border-top: 1px solid rgba(255,255,255,.1); }
-      .nav-links .nav-cta { margin: 8px 24px 16px; padding: 9px 12px; text-align: center; }
-      .hero { min-height: 710px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 17px; padding-top: 112px; }
-      .hero-content { max-width: 640px; }
-      .scroll-note { margin-top: 29px; }
-      .hero-art { width: min(100%, 330px); height: 248px; min-height: 0; max-height: none; margin: 0; }
-      .hero-photo { width: 330px; height: 248px; }
-      .coffee-grid { grid-template-columns: repeat(2, 1fr); }
-      .coffee-card:nth-child(3) { grid-column: span 2; }
-      .story-grid, .brew-grid { grid-template-columns: 1fr; }
-      .story-visual { max-width: 520px; width: 100%; margin: auto; }
-      .brew-art { max-width: 540px; width: 100%; margin: auto; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .footer-brand { grid-column: 1 / -1; }
+      .hero-content {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .hero-stats {
+        justify-content: center;
+      }
+      .process-timeline {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
-    @media (max-width: 560px) {
-      .wrap { width: calc(100% - 34px); }
-      .navbar { min-height: 70px; }
-      .brand-copy strong { font-size: 13px; }
-      .hero { min-height: 680px; }
-      .hero-grid { padding-top: 98px; padding-bottom: 34px; }
-      .hero-title { font-size: 40px; }
-      .hero-lede { margin-top: 16px; font-size: 14px; line-height: 1.7; }
-      .hero-actions { margin-top: 23px; }
-      .hero-actions .button { flex: 1; padding-inline: 13px; }
-      .hero-meta { margin-top: 18px; }
-      .hero-art { width: 260px; height: 195px; min-height: 0; max-height: none; }
-      .hero-photo { width: 260px; height: 195px; }
-      .art-label { display: none; }
-      .sun { width: 49px; height: 49px; }
-      .coffee-vessel { bottom: 9%; left: 25%; transform: scale(.72); transform-origin: bottom left; }
-      .chair { transform: scale(.72); transform-origin: bottom right; }
-      .story, .coffee, .brew, .visit { padding: 76px 0; }
-      .story-seal { width: 245px; height: 245px; }
-      .story-seal::before { margin-bottom: 8px; font-size: 54px; }
-      .story-seal strong { font-size: 15px; }
-      .story-visual { min-height: 315px; }
-      .note-card { width: 185px; padding: 18px; }
-      .note-card p:last-child { font-size: 14px; }
-      .coffee-heading { display: block; margin-bottom: 30px; }
-      .coffee-heading .section-copy { margin-top: 14px; }
-      .coffee-grid { grid-template-columns: 1fr; }
-      .coffee-card, .coffee-card:nth-child(3) { min-height: 330px; grid-column: auto; }
-      .brew-art { min-height: 310px; }
-      .pour-rings { width: 185px; height: 185px; }
-      .v60 { transform: translate(-50%,-28%) scale(.82); }
-      .subscribe-form { display: grid; gap: 6px; padding: 5px; }
-      .subscribe-form input, .subscribe-form button { width: 100%; }
-      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-      .footer-brand { grid-column: auto; }
-      .footer-bottom { display: grid; gap: 9px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
-      .reveal { opacity: 1; transform: none; }
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+      .nav-menu {
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        flex-direction: column;
+        padding: 24px;
+        box-shadow: var(--shadow-md);
+        display: none;
+        gap: 18px;
+        border-top: 1px solid var(--border-color);
+      }
+      .nav-menu.open {
+        display: flex;
+      }
+      .form-wrapper {
+        padding: 30px 20px;
+      }
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+      .process-timeline {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="site-header" id="top">
-    <nav class="wrap navbar" aria-label="主要導覽">
-      <a class="brand" href="#top" aria-label="回到藍天咖啡首頁">
-        <span class="brand-mark" aria-hidden="true">B</span>
-        <span class="brand-copy"><strong>藍天咖啡</strong><small>BLUE SKY COFFEE</small></span>
+
+  <!-- 頂部溫馨公告欄 -->
+  <div class="top-announcement">
+    🐾 <strong>【以領養代替購買】</strong> 本週六日毛孩家園有 12 隻可愛浪浪等待互動，歡迎提前預約到園參觀！
+  </div>
+
+  <!-- 網站頂部導覽列 -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo" aria-label="毛孩家園首頁">
+        <div class="brand-icon">🐾</div>
+        <div class="brand-title">
+          毛孩家園
+          <small>FurBaby Home</small>
+        </div>
       </a>
-      <button class="menu-toggle" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="開啟導覽選單">☰</button>
-      <div class="nav-links" id="navLinks">
-        <a href="#story">我們的故事</a>
-        <a href="#coffee">本季選豆</a>
-        <a href="#brew">沖煮日常</a>
-        <a class="nav-cta" href="#visit">訂閱風味通信</a>
-      </div>
-    </nav>
+
+      <!-- 手機版選單切換按鈕 -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="切換導覽選單">☰</button>
+
+      <!-- 主要導覽連結 -->
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#about" class="nav-link">領養理念</a></li>
+          <li><a href="#pets" class="nav-link">待領養毛孩</a></li>
+          <li><a href="#process" class="nav-link">領養四部曲</a></li>
+          <li><a href="#guides" class="nav-link">新手教學</a></li>
+          <li><a href="#faq" class="nav-link">常見問題</a></li>
+          <li><a href="#apply" class="nav-btn">立即申請領養 💖</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="hero" aria-labelledby="heroTitle">
-      <div class="wrap hero-grid">
+  <main id="home">
+    <!-- Hero 英雄主視覺區塊 -->
+    <section class="hero">
+      <div class="hero-decor-1"></div>
+      <div class="hero-decor-2"></div>
+      <div class="container hero-grid">
         <div class="hero-content">
-          <p class="eyebrow">HAND BREWED · SLOWLY ROASTED</p>
-          <h1 class="hero-title" id="heroTitle">讓風味，在<span class="sky-word">藍天</span>下慢慢抵達。</h1>
-          <p class="hero-lede">藍天咖啡為喜歡手沖的您，挑選值得細品的單一產區咖啡豆。從第一縷花香，到最後一口回甘，每一杯都有屬於自己的晴朗天氣。</p>
+          <div class="badge badge-orange">
+            🧡 給毛孩一個不再流浪的明天
+          </div>
+          <h1 class="hero-title">
+            推廣<span>以領養代替購買</span>，<br>用愛陪毛孩找到溫暖的家
+          </h1>
+          <p class="hero-desc">
+            每一個毛孩都值得被世界溫柔相待。毛孩家園致力於救助浪浪、提供基礎醫療與親人培訓，並為準飼主準備完善的新手指南，陪你與未來的家人開啟美好旅程。
+          </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#coffee">探索本季咖啡豆 →</a>
-            <a class="button button-outline" href="#story">認識藍天</a>
+            <a href="#pets" class="btn btn-orange">尋找命定毛孩 🐶</a>
+            <a href="#guides" class="btn btn-outline-green">養寵新手指南 📖</a>
           </div>
-          <p class="hero-meta">TAIPEI · TAIWAN · EST. 2025</p>
-          <p class="scroll-note">SCROLL TO DISCOVER</p>
-        </div>
-
-        <div class="hero-art" aria-hidden="true">
-          <img class="hero-photo" src="images/hero.jpg" width="400" height="300" alt="">
-          <span class="art-label"><strong>92°C</strong><span>理想水溫</span><small>細細喚醒香氣</small></span>
-        </div>
-      </div>
-    </section>
-
-    <section class="story" id="story" aria-labelledby="storyTitle">
-      <div class="wrap story-grid">
-        <div class="story-visual reveal" aria-hidden="true">
-          <div class="story-seal"><strong>慢一點，<br>更清楚。</strong><span>LET THE FLAVOUR SPEAK</span></div>
-          <div class="note-card"><p>BLUE SKY NOTE</p><p>一杯好咖啡，從來不是匆忙完成的事。</p></div>
-        </div>
-        <div class="story-content reveal">
-          <p class="eyebrow">OUR PHILOSOPHY</p>
-          <h2 class="section-title" id="storyTitle">在一杯之間，看見產地的<span class="accent">晴朗</span>。</h2>
-          <p>我們相信，精品咖啡的美好不該被複雜掩蓋。以小批次烘焙留住豆子的個性，再用穩定、誠實的手沖，讓風土與時間在杯中變得清晰。</p>
-          <p>給懂得放慢腳步的人，也給每一個想重新認識咖啡的人。</p>
-          <a class="underlined-link" href="#brew">看看我們如何沖煮 →</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="coffee" id="coffee" aria-labelledby="coffeeTitle">
-      <div class="wrap">
-        <div class="coffee-heading reveal">
-          <div>
-            <p class="eyebrow">SEASONAL SELECTION</p>
-            <h2 class="section-title" id="coffeeTitle">今天，想喝哪一片<span class="accent">藍天</span>？</h2>
+          <div class="hero-stats">
+            <div>
+              <div class="stat-number">850+</div>
+              <div class="stat-label">隻毛孩成功找到家</div>
+            </div>
+            <div>
+              <div class="stat-number">100%</div>
+              <div class="stat-label">完成健檢與結紮</div>
+            </div>
+            <div>
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">新手終生諮詢支援</div>
+            </div>
           </div>
-          <p class="section-copy">三款當季單品，為不同的晨光、午後與靜夜而選。</p>
         </div>
-        <div class="coffee-grid">
-          <article class="coffee-card reveal">
-            <p class="bean-no">01 / BRIGHT</p>
-            <p class="origin">ETHIOPIA · YIRGACHEFFE</p>
-            <h3 class="bean-name">衣索比亞・耶加雪菲</h3>
-            <p class="flavour">白花、佛手柑、蜂蜜</p>
-            <div class="coffee-bottom"><span class="price">NT$ 520 / 200g</span><button class="save-button" type="button" data-coffee="衣索比亞・耶加雪菲">加入收藏 ＋</button></div>
-          </article>
-          <article class="coffee-card reveal">
-            <p class="bean-no">02 / JUICY</p>
-            <p class="origin">KENYA · KIRINYAGA</p>
-            <h3 class="bean-name">肯亞・祈安布</h3>
-            <p class="flavour">黑醋栗、洛神、葡萄柚</p>
-            <div class="coffee-bottom"><span class="price">NT$ 580 / 200g</span><button class="save-button" type="button" data-coffee="肯亞・祈安布">加入收藏 ＋</button></div>
-          </article>
-          <article class="coffee-card reveal">
-            <p class="bean-no">03 / ROUND</p>
-            <p class="origin">COLOMBIA · HUILA</p>
-            <h3 class="bean-name">哥倫比亞・慧蘭</h3>
-            <p class="flavour">黃桃、焦糖、可可尾韻</p>
-            <div class="coffee-bottom"><span class="price">NT$ 460 / 200g</span><button class="save-button" type="button" data-coffee="哥倫比亞・慧蘭">加入收藏 ＋</button></div>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <section class="brew" id="brew" aria-labelledby="brewTitle">
-      <div class="wrap brew-grid">
-        <div class="brew-art reveal" aria-hidden="true">
-          <span class="pour-rings"></span><span class="pour-line"></span><span class="v60"></span>
-          <span class="brew-caption"><strong>2'45''</strong><span>V60 / 15G : 240ML</span></span>
-        </div>
-        <div class="brew-content reveal">
-          <p class="eyebrow">A QUIET RITUAL</p>
-          <h2 class="section-title" id="brewTitle">把時間交給水，讓咖啡說<span class="accent">自己的話</span>。</h2>
-          <p class="section-copy">不需要繁複儀式，只要三個安靜的步驟。每一個參數，都是為了讓你更靠近豆子原本的樣子。</p>
-          <div class="brew-steps">
-            <div class="brew-step"><span class="step-no">01</span><div><h3>研磨，先聞見期待</h3><p>15g 中細研磨，讓香氣從指尖開始展開。</p></div></div>
-            <div class="brew-step"><span class="step-no">02</span><div><h3>悶蒸，等待第一個呼吸</h3><p>以 92°C 熱水浸潤 30 秒，喚醒甜感與層次。</p></div></div>
-            <div class="brew-step"><span class="step-no">03</span><div><h3>注水，保持自己的節奏</h3><p>穩定畫圈，讓 240ml 的清澈在 2 分 45 秒完成。</p></div></div>
+        <div class="hero-visual">
+          <div class="hero-card-main">
+            <div class="hero-img-wrap">
+              <img src="images/hero.jpg" alt="毛孩家園" width="400" height="300" loading="lazy">
+            </div>
+          </div>
+          <div class="hero-float-card">
+            <div class="hero-float-icon">🏡</div>
+            <div class="hero-float-text">
+              <b>愛心讓生命綻放</b>
+              <span>「領養不是施捨，是雙向治癒」</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="visit" id="visit" aria-labelledby="visitTitle">
-      <div class="wrap reveal">
-        <p class="eyebrow">THE BLUE SKY LETTER</p>
-        <h2 class="section-title" id="visitTitle">把下一杯好咖啡，寄到你的日常裡。</h2>
-        <p class="section-copy">每月一封風味通信，分享新豆、沖煮靈感與只給會員的小小驚喜。</p>
-        <form class="subscribe-form" id="subscribeForm">
-          <input type="email" aria-label="電子郵件地址" placeholder="你的電子郵件地址" required>
-          <button type="submit">訂閱風味通信</button>
-        </form>
+    <!-- 理念核心：以領養代替購買 -->
+    <section class="section mission" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge badge-green">🌿 我們的初衷與堅持</div>
+          <h2 class="section-title">為什麼我們堅持「以領養代替購買」？</h2>
+          <p class="section-subtitle">
+            每一隻等待被領養的毛孩，都有著獨特閃亮的靈魂。領養不僅拯救了一個流浪生命，更是抵制不當繁殖的溫柔力量。
+          </p>
+        </div>
+
+        <div class="mission-grid">
+          <div class="mission-card">
+            <div class="mission-icon">❤️</div>
+            <h3>拯救一個無助生命</h3>
+            <p>你的領養，直接改變了一隻浪浪的命運，讓牠不再面對風雨與飢餓，體會被愛的幸福。</p>
+          </div>
+
+          <div class="mission-card">
+            <div class="mission-icon">🩺</div>
+            <h3>安心透明的健康把關</h3>
+            <p>所有毛孩入園皆完成體內外驅蟲、三合一篩檢、預防針施打與適齡絕育，健康透明放心。</p>
+          </div>
+
+          <div class="mission-card">
+            <div class="mission-icon">🐶</div>
+            <h3>成熟穩定的真實個性</h3>
+            <p>志工長期陪伴記錄每隻毛孩的性格與生活習性，能為你精準配對最適合家庭節奏的夥伴。</p>
+          </div>
+
+          <div class="mission-card">
+            <div class="mission-icon">🤝</div>
+            <h3>全程相伴的照護支援</h3>
+            <p>不是帶回家就結束！毛孩家園提供專屬飼養指南與志工諮詢，新手家庭也能從容上手。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 待領養寵物資訊 -->
+    <section class="section pets-section" id="pets">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge badge-orange">🐾 遇見心動家人</div>
+          <h2 class="section-title">待領養毛孩資訊</h2>
+          <p class="section-subtitle">
+            牠們正搖著尾巴、踏著肉球，期盼著遇見願意給牠一輩子承諾的那個你。
+          </p>
+        </div>
+
+        <!-- 分類篩選按鈕 -->
+        <div class="pet-filter-bar">
+          <button class="filter-btn active" data-filter="all">全部毛孩 (6)</button>
+          <button class="filter-btn" data-filter="dog">活力萌犬 🐕</button>
+          <button class="filter-btn" data-filter="cat">療癒喵星人 🐈</button>
+        </div>
+
+        <!-- 寵物卡片列表 -->
+        <div class="pets-grid" id="petsGrid">
+          
+          <!-- 寵物卡片 1 -->
+          <article class="pet-card" data-category="dog">
+            <div class="pet-img-container">
+              <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=700&q=80" alt="黃金混血犬 豆豆" loading="lazy">
+              <span class="pet-type-tag">狗狗 🐕</span>
+              <button class="pet-fav-btn" title="加入收藏" aria-label="收藏豆豆">♥</button>
+            </div>
+            <div class="pet-body">
+              <div class="pet-header">
+                <h3 class="pet-name">豆豆</h3>
+                <span class="pet-meta">1歲2個月 · 公 (♂)</span>
+              </div>
+              <p class="pet-breed">米克斯米黃犬 · 中型</p>
+              <div class="pet-tags">
+                <span class="pet-tag">已結紮</span>
+                <span class="pet-tag">已打晶片</span>
+                <span class="pet-tag">熱情親人</span>
+                <span class="pet-tag">會定點散步</span>
+              </div>
+              <p class="pet-desc">
+                豆豆是收容所的開心果，尾巴永遠搖得像直升機！非常喜歡被摸摸下巴，出門散步穩定不暴衝，適合熱愛戶外休閒的家庭。
+              </p>
+              <div class="pet-actions">
+                <button class="pet-btn-detail" onclick="openPetModal('豆豆', '米克斯米黃犬', '1歲2個月', '公 (♂)', '已完成結紮、八合一疫苗、狂犬病疫苗，晶片已植入。體重約 14kg。', '豆豆性格樂天陽光，對陌生人毫無敵意，懂得坐下與握手，渴望有一個能常帶牠散步曬太陽的溫暖家庭。', 'https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=700&q=80')">查看詳細</button>
+                <button class="pet-btn-adopt" onclick="selectPetForAdoption('豆豆')">我要領養 🐾</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 寵物卡片 2 -->
+          <article class="pet-card" data-category="cat">
+            <div class="pet-img-container">
+              <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=700&q=80" alt="橘白貓 麻糬" loading="lazy">
+              <span class="pet-type-tag">貓咪 🐈</span>
+              <button class="pet-fav-btn" title="加入收藏" aria-label="收藏麻糬">♥</button>
+            </div>
+            <div class="pet-body">
+              <div class="pet-header">
+                <h3 class="pet-name">麻糬</h3>
+                <span class="pet-meta">8個月 · 母 (♀)</span>
+              </div>
+              <p class="pet-breed">米克斯橘白貓 · 短毛</p>
+              <div class="pet-tags">
+                <span class="pet-tag">已結紮</span>
+                <span class="pet-tag">已打晶片</span>
+                <span class="pet-tag">呼嚕製造機</span>
+                <span class="pet-tag">親貓親人</span>
+              </div>
+              <p class="pet-desc">
+                圓滾滾的橘白小美女，只要輕輕摸摸頭就會立刻啟動呼嚕馬達，愛踩奶、極度親人，適合新手貓奴或已有原住貓的家庭。
+              </p>
+              <div class="pet-actions">
+                <button class="pet-btn-detail" onclick="openPetModal('麻糬', '米克斯橘白貓', '8個月', '母 (♀)', '體內外驅蟲完畢、三合一篩檢陰性、已結紮並完成兩劑核心疫苗。', '麻糬是志工在雨夜救回的小貓，個性溫柔黏人，喜歡趴在人腿上睡覺，是冬天裡最暖心的小暖爐。', 'https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=700&q=80')">查看詳細</button>
+                <button class="pet-btn-adopt" onclick="selectPetForAdoption('麻糬')">我要領養 🐾</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 寵物卡片 3 -->
+          <article class="pet-card" data-category="dog">
+            <div class="pet-img-container">
+              <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=700&q=80" alt="黑色米克斯 歐比" loading="lazy">
+              <span class="pet-type-tag">狗狗 🐕</span>
+              <button class="pet-fav-btn" title="加入收藏" aria-label="收藏歐比">♥</button>
+            </div>
+            <div class="pet-body">
+              <div class="pet-header">
+                <h3 class="pet-name">歐比</h3>
+                <span class="pet-meta">2歲 · 公 (♂)</span>
+              </div>
+              <p class="pet-breed">台灣土狗混血 · 中型</p>
+              <div class="pet-tags">
+                <span class="pet-tag">已結紮</span>
+                <span class="pet-tag">極度聰明</span>
+                <span class="pet-tag">忠誠護主</span>
+                <span class="pet-tag">健康活潑</span>
+              </div>
+              <p class="pet-desc">
+                一身帥氣黑亮的毛髮！歐比有台灣犬特有的聰慧機靈，懂得察言觀色、學習指令極快，只要認同主人便是一生忠誠的守護者。
+              </p>
+              <div class="pet-actions">
+                <button class="pet-btn-detail" onclick="openPetModal('歐比', '台灣黑犬混血', '2歲', '公 (♂)', '體健壯碩，約 16kg。已完成狂犬病與八合一疫苗，定期服用心絲蟲預防藥。', '歐比雖然一開始對陌生環境較為謹慎，但只要給牠一點零食和時間，就會展現出最憨厚撒嬌的一面。', 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=700&q=80')">查看詳細</button>
+                <button class="pet-btn-adopt" onclick="selectPetForAdoption('歐比')">我要領養 🐾</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 寵物卡片 4 -->
+          <article class="pet-card" data-category="cat">
+            <div class="pet-img-container">
+              <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=700&q=80" alt="虎斑三花貓 咪咪" loading="lazy">
+              <span class="pet-type-tag">貓咪 🐈</span>
+              <button class="pet-fav-btn" title="加入收藏" aria-label="收藏咪咪">♥</button>
+            </div>
+            <div class="pet-body">
+              <div class="pet-header">
+                <h3 class="pet-name">咪咪</h3>
+                <span class="pet-meta">1歲半 · 母 (♀)</span>
+              </div>
+              <p class="pet-breed">三花虎斑貓 · 短毛</p>
+              <div class="pet-tags">
+                <span class="pet-tag">已結紮</span>
+                <span class="pet-tag">安靜優雅</span>
+                <span class="pet-tag">不抓家具</span>
+                <span class="pet-tag">適合公寓</span>
+              </div>
+              <p class="pet-desc">
+                文靜典雅的氣質淑女，喜歡在窗邊曬太陽看小鳥。性格溫和不吵鬧，是居家上班、閱讀生活最舒服療癒的相伴夥伴。
+              </p>
+              <div class="pet-actions">
+                <button class="pet-btn-detail" onclick="openPetModal('咪咪', '三花虎斑貓', '1歲半', '母 (♀)', '已施打完整三合一疫苗、已完成結紮手術，貓愛滋/白血快篩均為陰性。', '咪咪不需要過多的激烈玩耍，只要每天輕聲對牠說話、替牠梳毛，牠就會瞇著眼睛用小腦袋蹭你的手。', 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=700&q=80')">查看詳細</button>
+                <button class="pet-btn-adopt" onclick="selectPetForAdoption('咪咪')">我要領養 🐾</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 寵物卡片 5 -->
+          <article class="pet-card" data-category="dog">
+            <div class="pet-img-container">
+              <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=700&q=80" alt="拉布拉多混血 樂樂" loading="lazy">
+              <span class="pet-type-tag">狗狗 🐕</span>
+              <button class="pet-fav-btn" title="加入收藏" aria-label="收藏樂樂">♥</button>
+            </div>
+            <div class="pet-body">
+              <div class="pet-header">
+                <h3 class="pet-name">樂樂</h3>
+                <span class="pet-meta">3歲 · 公 (♂)</span>
+              </div>
+              <p class="pet-breed">拉布拉多混血 · 中大型</p>
+              <div class="pet-tags">
+                <span class="pet-tag">已結紮</span>
+                <span class="pet-tag">超級大暖男</span>
+                <span class="pet-tag">友善親小孩</span>
+                <span class="pet-tag">個性沉穩</span>
+              </div>
+              <p class="pet-desc">
+                名副其實的大暖男！對小朋友特別有耐心與包容度，從不護食，非常適合有孩子或第一次養狗的溫馨家庭。
+              </p>
+              <div class="pet-actions">
+                <button class="pet-btn-detail" onclick="openPetModal('樂樂', '拉布拉多混血犬', '3歲', '公 (♂)', '晶片、絕育、疫苗俱全。骨骼健康良好，平時習慣定點戶外排泄。', '樂樂曾遭受棄養但在志工照料下依然全心信任人類，是個懂得感恩、懂得愛人的溫柔大男孩。', 'https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=700&q=80')">查看詳細</button>
+                <button class="pet-btn-adopt" onclick="selectPetForAdoption('樂樂')">我要領養 🐾</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 寵物卡片 6 -->
+          <article class="pet-card" data-category="cat">
+            <div class="pet-img-container">
+              <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=700&q=80" alt="灰白美短混血 泡泡" loading="lazy">
+              <span class="pet-type-tag">貓咪 🐈</span>
+              <button class="pet-fav-btn" title="加入收藏" aria-label="收藏泡泡">♥</button>
+            </div>
+            <div class="pet-body">
+              <div class="pet-header">
+                <h3 class="pet-name">泡泡</h3>
+                <span class="pet-meta">1歲 · 母 (♀)</span>
+              </div>
+              <p class="pet-breed">灰白混血貓 · 短毛</p>
+              <div class="pet-tags">
+                <span class="pet-tag">已結紮</span>
+                <span class="pet-tag">愛撒嬌呼嚕</span>
+                <span class="pet-tag">大眼睛萌妹</span>
+                <span class="pet-tag">愛玩逗貓棒</span>
+              </div>
+              <p class="pet-desc">
+                雙眼澄澈如湖水般的萌妹子！最喜歡追著逗貓棒跳躍，玩累了就會主動走到你的手邊蹭蹭討摸，活潑又討喜。
+              </p>
+              <div class="pet-actions">
+                <button class="pet-btn-detail" onclick="openPetModal('泡泡', '灰白混血短毛貓', '1歲', '母 (♀)', '健康檢查全數合格，已完成狂犬與貓三聯疫苗接種，已施作微創絕育手術。', '泡泡個性好奇心旺盛且樂天，適應新環境極快，能為平淡的日常增添無數歡笑與甜蜜時光。', 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=700&q=80')">查看詳細</button>
+                <button class="pet-btn-adopt" onclick="selectPetForAdoption('泡泡')">我要領養 🐾</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 領養流程說明：四部曲 -->
+    <section class="section process" id="process">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge badge-green">📋 簡單透明的程序</div>
+          <h2 class="section-title">毛孩家園領養四部曲</h2>
+          <p class="section-subtitle">
+            我們用心審核，不是為了刁難，而是為了確保你與毛孩都能迎接一輩子幸福安穩的家。
+          </p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="process-card">
+            <div class="process-step-num">01</div>
+            <h4>線上挑選與認識</h4>
+            <p>在網站瀏覽毛孩基本性格資訊，尋找彼此生活節奏最契合的命定伴侶。</p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-step-num">02</div>
+            <h4>填寫領養申請書</h4>
+            <p>填寫本頁下方的線上申請表單，讓我們初步了解您的居家環境與照護規劃。</p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-step-num">03</div>
+            <h4>到園互動與深度訪談</h4>
+            <p>由專業志工安排與毛孩見面互動，並共同評估彼此契合度與照護須知。</p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-step-num">04</div>
+            <h4>迎接毛孩回家</h4>
+            <p>簽署領養切結書、辦理寵物晶片過戶，帶心愛的家人開啟美好的新生活！</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 養寵新手教學文章 -->
+    <section class="section guides-section" id="guides">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge badge-orange">📚 養寵指南與科普</div>
+          <h2 class="section-title">養寵新手教學專區</h2>
+          <p class="section-subtitle">
+            不論是初次養寵還是想升級為神隊友飼主，這些新手攻略幫你輕鬆避開新手地雷！
+          </p>
+        </div>
+
+        <div class="guides-grid">
+          <!-- 文章 1 -->
+          <article class="guide-card" onclick="openGuideModal(1)">
+            <div class="guide-cover">
+              <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=600&q=80" alt="接毛孩回家前備品與環境檢查" loading="lazy">
+              <span class="guide-tag">準備功課</span>
+            </div>
+            <div class="guide-content">
+              <h3 class="guide-title">【新手入門】毛孩帶回家第一週：必備用品清單與環境安全檢查</h3>
+              <p class="guide-snippet">
+                剛帶貓狗回家，環境佈置是安撫焦慮的關鍵！防抓防逃紗窗防護、飼料食盆、安全圍欄與專屬睡墊清單全整理。
+              </p>
+              <div class="guide-footer">
+                <span>新手必讀 · 4 分鐘閱讀</span>
+                <span>點擊閱讀全文 →</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 文章 2 -->
+          <article class="guide-card" onclick="openGuideModal(2)">
+            <div class="guide-cover">
+              <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&q=80" alt="狗狗定點如廁與減敏訓練" loading="lazy">
+              <span class="guide-tag">狗狗教學</span>
+            </div>
+            <div class="guide-content">
+              <h3 class="guide-title">【狗狗專用】狗狗定點如廁與籠內減敏訓練：用正向獎勵教出天使汪</h3>
+              <p class="guide-snippet">
+                不打不罵！掌握狗狗剛睡醒、吃飽後的黃金排泄時機，運用零食正向回饋法，讓狗狗輕鬆學會到尿墊上廁所。
+              </p>
+              <div class="guide-footer">
+                <span>行為訓練 · 5 分鐘閱讀</span>
+                <span>點擊閱讀全文 →</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 文章 3 -->
+          <article class="guide-card" onclick="openGuideModal(3)">
+            <div class="guide-cover">
+              <img src="https://images.unsplash.com/photo-1513360309081-38f076278f1d?auto=format&fit=crop&w=600&q=80" alt="貓咪適應新環境指南" loading="lazy">
+              <span class="guide-tag">貓咪教學</span>
+            </div>
+            <div class="guide-content">
+              <h3 class="guide-title">【貓咪專用】剛到家貓咪躲起來怎麼辦？三步驟陪伴貓咪度過警戒期</h3>
+              <p class="guide-snippet">
+                貓咪是嚴重的領地動物，剛換環境躲沙發底下很正常！教你如何佈置「隔離安全屋」，不用急著抓牠出來摸。
+              </p>
+              <div class="guide-footer">
+                <span>貓咪心理 · 4 分鐘閱讀</span>
+                <span>點擊閱讀全文 →</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 文章 4 -->
+          <article class="guide-card" onclick="openGuideModal(4)">
+            <div class="guide-cover">
+              <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=600&q=80" alt="寵物醫療與疫苗時程表" loading="lazy">
+              <span class="guide-tag">健康醫療</span>
+            </div>
+            <div class="guide-content">
+              <h3 class="guide-title">【醫療常識】核心疫苗時程、體內外驅蟲與適齡絕育的健康指南</h3>
+              <p class="guide-subtitle"></p>
+              <p class="guide-snippet">
+                預防勝於治療！狂犬病、三合一/八合一何時施打？為什麼定期體內外驅蟲能大幅延長毛孩壽命？一次看懂。
+              </p>
+              <div class="guide-footer">
+                <span>獸醫衛教 · 6 分鐘閱讀</span>
+                <span>點擊閱讀全文 →</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 領養申請表單填寫 -->
+    <section class="section form-section" id="apply">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge badge-green">📝 為愛跨出第一步</div>
+          <h2 class="section-title">領養申請表單填寫</h2>
+          <p class="section-subtitle">
+            請如實填寫以下資訊，送出後我們的領養評估志工將在 2-3 個工作天內主動與您聯絡。
+          </p>
+        </div>
+
+        <div class="form-wrapper">
+          <div class="form-intro">
+            <h3>毛孩家園 · 領養申請意願書</h3>
+            <p>※ 標註紅色星號（<span style="color:#ef4444">*</span>）為必填項目，您的個人資料僅用於領養審核與聯絡。</p>
+          </div>
+
+          <form id="adoptionForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-grid">
+              
+              <!-- 申請人姓名 -->
+              <div class="form-group">
+                <label class="form-label" for="applicantName">申請人真實姓名<span class="req">*</span></label>
+                <input class="form-control" type="text" id="applicantName" placeholder="例如：王小明" required>
+              </div>
+
+              <!-- 聯絡電話 -->
+              <div class="form-group">
+                <label class="form-label" for="applicantPhone">聯絡手機號碼<span class="req">*</span></label>
+                <input class="form-control" type="tel" id="applicantPhone" placeholder="例如：0912-345-678" pattern="[0-9\- ]+" required>
+              </div>
+
+              <!-- 電子信箱 -->
+              <div class="form-group">
+                <label class="form-label" for="applicantEmail">電子信箱 (Email)<span class="req">*</span></label>
+                <input class="form-control" type="email" id="applicantEmail" placeholder="例如：example@gmail.com" required>
+              </div>
+
+              <!-- 想領養的毛孩 -->
+              <div class="form-group">
+                <label class="form-label" for="targetPet">心儀的領養毛孩<span class="req">*</span></label>
+                <select class="form-control" id="targetPet" required>
+                  <option value="" disabled selected>請選擇您希望領養的毛孩</option>
+                  <option value="豆豆">🐶 豆豆 (米克斯米黃犬 · 1歲2個月)</option>
+                  <option value="麻糬">🐈 麻糬 (米克斯橘白貓 · 8個月)</option>
+                  <option value="歐比">🐶 歐比 (台灣黑犬混血 · 2歲)</option>
+                  <option value="咪咪">🐈 咪咪 (三花虎斑貓 · 1歲半)</option>
+                  <option value="樂樂">🐶 樂樂 (拉布拉多混血 · 3歲)</option>
+                  <option value="泡泡">🐈 泡泡 (灰白短毛混血 · 1歲)</option>
+                  <option value="尚未確定/由志工推薦">🐾 尚未確定，想依志工建議安排合適毛孩</option>
+                </select>
+              </div>
+
+              <!-- 居住型態 -->
+              <div class="form-group">
+                <label class="form-label" for="housingType">目前居住環境型態<span class="req">*</span></label>
+                <select class="form-control" id="housingType" required>
+                  <option value="" disabled selected>請選擇您的居住環境</option>
+                  <option value="自有住宅 (透天/公寓)">自有住宅 (透天/公寓無租約限制)</option>
+                  <option value="租屋 (房東已明確書面同意養寵物)">租屋處 (房東已明確書面同意養寵)</option>
+                  <option value="租屋 (正與房東溝通中)">租屋處 (正與房東溝通協調中)</option>
+                  <option value="與長輩同住">與父母或長輩同住</option>
+                </select>
+              </div>
+
+              <!-- 飼養經驗 -->
+              <div class="form-group">
+                <label class="form-label" for="expLevel">過去或目前的養寵經驗<span class="req">*</span></label>
+                <select class="form-control" id="expLevel" required>
+                  <option value="" disabled selected>請選擇經驗程度</option>
+                  <option value="初次新手 (從未飼養過貓狗)">新手飼主 (初次飼養，已詳讀新手指南)</option>
+                  <option value="曾有飼養經驗 (目前無寵物)">曾有飼養經驗 (目前家中無寵物)</option>
+                  <option value="現任飼主 (目前家中有犬/貓)">現任飼主 (目前家中有其他犬貓伴侶)</option>
+                </select>
+              </div>
+
+              <!-- 同住人意願 -->
+              <div class="form-group full-width">
+                <label class="form-label">同住家人或室友是否全數同意領養？<span class="req">*</span></label>
+                <div class="radio-group">
+                  <label class="radio-label">
+                    <input type="radio" name="familyConsent" value="全數同意" required checked> 是，所有同住成員均已充分討論並全數支持
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="familyConsent" value="一人獨居"> 我是一人獨居，能全權對寵物負責
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="familyConsent" value="尚在溝通中"> 尚在溝通中，希望能先與毛孩互動
+                  </label>
+                </div>
+              </div>
+
+              <!-- 每天預計陪伴時長 -->
+              <div class="form-group full-width">
+                <label class="form-label">預計平日每天能陪伴毛孩的時間<span class="req">*</span></label>
+                <div class="radio-group">
+                  <label class="radio-label">
+                    <input type="radio" name="timeWithPet" value="居家上班/全天有人" required checked> 居家工作／全天家中有人
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="timeWithPet" value="4-8小時"> 每日約 4 - 8 小時
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="timeWithPet" value="4小時以內"> 每日約 4 小時以內 (有安裝寵物監視器)
+                  </label>
+                </div>
+              </div>
+
+              <!-- 自我介紹與備註 -->
+              <div class="form-group full-width">
+                <label class="form-label" for="applicantNote">自我介紹、生活型態與對未來毛孩的期許（選填）</label>
+                <textarea class="form-control" id="applicantNote" placeholder="例如：平日作息時間、是否有陽台門窗防護裝置、預計由誰主要照顧等，能幫助我們更快為您與毛孩完成配對。"></textarea>
+              </div>
+
+              <!-- 承諾條款 -->
+              <div class="form-group full-width">
+                <div class="agreement-box">
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="agreeTerms" required checked>
+                    <strong>我承諾遵守領養規範：</strong> 不離不棄視毛孩為家人、承諾定期施打法定疫苗與心絲蟲防護、配合家訪或後續回報健康照護狀況，絕不將毛孩轉售、棄養或放養。
+                  </label>
+                </div>
+              </div>
+
+              <!-- 提交按鈕 -->
+              <div class="form-group full-width">
+                <button type="submit" class="btn btn-orange form-submit-btn">
+                  確認並送出領養申請表單 🐾
+                </button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 常見問答 FAQ -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge badge-orange">💡 解開心中疑慮</div>
+          <h2 class="section-title">領養常見問題 FAQ</h2>
+          <p class="section-subtitle">
+            領養前有任何疑問嗎？以下是許多準爸媽最常詢問的重點解答。
+          </p>
+        </div>
+
+        <div class="faq-container">
+          <div class="faq-item open">
+            <div class="faq-question">
+              <span>Q1. 領養需要支付任何費用嗎？</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              毛孩家園所有領養本身皆為「完全免費」。毛孩在園區期間完成的基本八合一/三合一疫苗、體內外驅蟲、狂犬病疫苗以及晶片過戶登記均由園區基金負擔，無任何強制收費或綁約。
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Q2. 租屋族可以申請領養嗎？</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              當然可以！租屋族只要房東明確同意飼養，且租屋處具備安全的防護（例如養貓必須有穩固的紗窗安全鎖或防護網），並且具有穩定的經濟收入與照顧責任心，我們非常歡迎租屋族領養。
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Q3. 領養之後，會有志工追蹤或家訪嗎？</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              為了確保毛孩適應良好，前三個月志工會透過 LINE 或電話進行溫馨關懷詢問。若新手爸媽在照護、飲食或行為訓練上有任何困難，園區有專屬訓犬師與獸醫顧問隨時提供線上諮詢協助。
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Q4. 如果到現場發現彼此不適合怎麼辦？</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              完全沒關係！這正是「到園互動」最重要的目的。每隻毛孩與每個家庭的緣分不同，志工會陪伴您與多隻毛孩互動，甚至建議更符合您作息與家庭特性的其他毛孩，不用感到壓力。
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- 頁尾 Footer -->
   <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div class="footer-brand">
-        <a class="brand" href="#top" aria-label="回到藍天咖啡首頁"><span class="brand-mark" aria-hidden="true">B</span><span class="brand-copy"><strong>藍天咖啡</strong><small>BLUE SKY COFFEE</small></span></a>
-        <p>為喜歡手沖咖啡的你，留下一段慢慢品味、微微放晴的時間。</p>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>🐾 毛孩家園 FurBaby Home</h4>
+          <p>
+            我們深信，每隻流浪動物都該擁有一個遮風避雨、被溫柔以待的家。堅持以領養代替購買，用愛終止流浪。
+          </p>
+          <div style="font-size: 13px; color: #ffd27d;">
+            ★ 內政部合法非營利立案字號：台內團字第 1120088921 號
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>快速連結</h5>
+          <ul class="footer-links">
+            <li><a href="#about">領養理念與優點</a></li>
+            <li><a href="#pets">待領養狗狗與貓咪</a></li>
+            <li><a href="#process">四步驟領養流程</a></li>
+            <li><a href="#guides">新手飼主教學專區</a></li>
+            <li><a href="#apply">線上領養意願表單</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>園區開放時間</h5>
+          <ul class="footer-links" style="color: rgba(255,255,255,0.8);">
+            <li>週二至週五：13:00 - 18:00</li>
+            <li>週六與週日：10:30 - 18:30</li>
+            <li>週一為休園清潔日</li>
+            <li>※ 到園互動敬請提前預約</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>聯絡我們</h5>
+          <div class="footer-contact-item">
+            <span>📍</span>
+            <span>園區地址：台北市士林區雨聲街 88 號（芝山捷運站接駁）</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>📞</span>
+            <span>愛心專線：(02) 2835-6688</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>✉️</span>
+            <span>聯絡信箱：adopt@furbabyhome.org.tw</span>
+          </div>
+        </div>
       </div>
-      <div>
-        <p class="footer-heading">EXPLORE</p>
-        <div class="footer-links"><a href="#story">我們的故事</a><a href="#coffee">本季選豆</a><a href="#brew">沖煮日常</a></div>
-      </div>
-      <div>
-        <p class="footer-heading">CONTACT</p>
-        <div class="footer-contact"><a href="mailto:hello@bluesky.coffee">hello@bluesky.coffee</a><span>台中市西屯區晨光路 100 號</span><span>每日 10:00 — 19:00</span></div>
+
+      <div class="footer-bottom">
+        <p>© 2026 毛孩家園 FurBaby Home. 保留所有權利｜推廣以領養代替購買，愛牠就愛牠一輩子，承諾不離不棄。</p>
       </div>
     </div>
-    <div class="wrap footer-bottom"><span>© 2025 BLUE SKY COFFEE. ALL RIGHTS RESERVED.</span><span>BREW SLOW · LIVE BRIGHT</span></div>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <!-- 彈跳視窗：寵物詳細資訊 Modal -->
+  <div class="modal-overlay" id="petModal" onclick="closeModalOnOverlay(event, 'petModal')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closePetModal()" aria-label="關閉視窗">✕</button>
+      <div style="border-radius: var(--radius-md); overflow: hidden; margin-bottom: 20px; max-height: 280px;">
+        <img id="modalPetImg" src="" alt="寵物照片" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+        <h3 id="modalPetName" style="font-size: 26px; font-weight: 900; color: var(--forest-green);"></h3>
+        <span id="modalPetMeta" style="color: var(--warm-orange); font-weight: 700;"></span>
+      </div>
+      <p id="modalPetBreed" style="color: var(--text-muted); font-size: 14px; margin-bottom: 14px;"></p>
+      
+      <div style="background: var(--forest-green-soft); padding: 14px; border-radius: var(--radius-sm); margin-bottom: 16px;">
+        <strong style="color: var(--forest-green); font-size: 13.5px; display: block; margin-bottom: 4px;">🩺 健檢與醫療紀錄：</strong>
+        <p id="modalPetMedical" style="font-size: 13px; color: var(--text-main); margin: 0;"></p>
+      </div>
 
+      <div style="margin-bottom: 24px;">
+        <strong style="color: var(--forest-green); font-size: 13.5px; display: block; margin-bottom: 4px;">🐾 性格與生活故事：</strong>
+        <p id="modalPetStory" style="font-size: 14px; color: var(--text-muted); line-height: 1.7;"></p>
+      </div>
+
+      <div style="display: flex; gap: 12px;">
+        <button class="btn btn-orange" style="flex: 1;" onclick="applyForCurrentPet()">立即申請領養這隻毛孩 💖</button>
+        <button class="btn btn-outline-green" onclick="closePetModal()">稍後再看</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 彈跳視窗：新手指南文章閱讀 Modal -->
+  <div class="modal-overlay" id="guideModal" onclick="closeModalOnOverlay(event, 'guideModal')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeGuideModal()" aria-label="關閉視窗">✕</button>
+      <div class="badge badge-orange" id="modalGuideBadge">指南專區</div>
+      <h3 id="modalGuideTitle" style="font-size: 22px; font-weight: 900; color: var(--forest-green); margin: 12px 0 16px; line-height: 1.4;"></h3>
+      <div id="modalGuideBody" style="font-size: 14.5px; color: var(--text-main); line-height: 1.8; margin-bottom: 24px;"></div>
+      <button class="btn btn-green" style="width: 100%;" onclick="closeGuideModal()">我已閱讀完畢 👍</button>
+    </div>
+  </div>
+
+  <!-- Toast 提示訊息 -->
+  <div class="toast-msg" id="toastMsg" role="alert"></div>
+
+  <!-- JavaScript 互動功能 -->
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const toast = document.querySelector('#toast');
-    let toastTimer;
+    // 1. 手機版漢堡選單切換
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
 
-    function closeMenu() {
-      navLinks.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', '開啟導覽選單');
-      menuToggle.textContent = '☰';
-    }
-
-    menuToggle.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuToggle.setAttribute('aria-label', isOpen ? '關閉導覽選單' : '開啟導覽選單');
-      menuToggle.textContent = isOpen ? '×' : '☰';
+    mobileMenuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      mobileMenuBtn.textContent = navMenu.classList.contains('open') ? '✕' : '☰';
     });
 
-    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-
-    function showToast(message) {
-      window.clearTimeout(toastTimer);
-      toast.textContent = message;
-      toast.classList.add('show');
-      toastTimer = window.setTimeout(() => toast.classList.remove('show'), 2600);
-    }
-
-    document.querySelectorAll('[data-coffee]').forEach(button => {
-      button.addEventListener('click', () => showToast(`已將「${button.dataset.coffee}」加入你的收藏。`));
+    // 點擊選單連結自動關閉手機選單
+    document.querySelectorAll('.nav-link, .nav-btn').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        mobileMenuBtn.textContent = '☰';
+      });
     });
 
-    document.querySelector('#subscribeForm').addEventListener('submit', event => {
-      event.preventDefault();
-      const form = event.currentTarget;
-      if (!form.checkValidity()) return;
-      form.reset();
-      showToast('謝謝訂閱，下一封晴朗的風味通信即將寄出。');
-    });
+    // 2. 寵物卡片分類篩選 (全部 / 狗 / 貓)
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const petCards = document.querySelectorAll('.pet-card');
 
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const revealItems = document.querySelectorAll('.reveal');
-    if (reduceMotion || !('IntersectionObserver' in window)) {
-      revealItems.forEach(item => item.classList.add('visible'));
-    } else {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        petCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
           }
         });
-      }, { threshold: .12 });
-      revealItems.forEach(item => observer.observe(item));
+      });
+    });
+
+    // 3. 收藏按鈕愛心互動
+    document.querySelectorAll('.pet-fav-btn').forEach(favBtn => {
+      favBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        favBtn.classList.toggle('active');
+        if (favBtn.classList.contains('active')) {
+          showToast('❤️ 已加入您的毛孩收藏清單！');
+        } else {
+          showToast('已自收藏清單中移除。');
+        }
+      });
+    });
+
+    // 4. Toast 通知顯示函數
+    let toastTimeout;
+    function showToast(text) {
+      const toast = document.getElementById('toastMsg');
+      toast.textContent = text;
+      toast.classList.add('show');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3200);
     }
+
+    // 5. 點擊「我要領養」自動帶入表單並平滑滾動
+    let currentSelectedPet = '';
+    function selectPetForAdoption(petName) {
+      currentSelectedPet = petName;
+      const targetSelect = document.getElementById('targetPet');
+      if (targetSelect) {
+        for (let i = 0; i < targetSelect.options.length; i++) {
+          if (targetSelect.options[i].value === petName) {
+            targetSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      showToast(`已為您選取心儀毛孩：${petName}，請填寫申請表單！`);
+      document.getElementById('apply').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function applyForCurrentPet() {
+      closePetModal();
+      if (currentSelectedPet) {
+        selectPetForAdoption(currentSelectedPet);
+      }
+    }
+
+    // 6. 寵物詳細資料彈跳視窗
+    function openPetModal(name, breed, age, gender, medical, story, imgUrl) {
+      currentSelectedPet = name;
+      document.getElementById('modalPetName').textContent = name;
+      document.getElementById('modalPetMeta').textContent = `${age} · ${gender}`;
+      document.getElementById('modalPetBreed').textContent = breed;
+      document.getElementById('modalPetMedical').textContent = medical;
+      document.getElementById('modalPetStory').textContent = story;
+      document.getElementById('modalPetImg').src = imgUrl;
+
+      document.getElementById('petModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePetModal() {
+      document.getElementById('petModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // 7. 新手指南彈跳視窗與文章內容
+    const guideArticles = {
+      1: {
+        badge: "新手準備指南",
+        title: "毛孩帶回家第一週：必備用品清單與環境安全檢查",
+        body: `
+          <p><strong>第一步：居家安全無死角防護</strong><br>
+          養貓務必在門窗、陽台安裝牢固的防護網或安全紗窗鎖，防止貓咪因好奇飛鳥而意外墜樓；養狗應收妥地面電線、清潔劑、巧克與百合花等對毛孩致命的有毒植物。</p>
+          <br>
+          <p><strong>第二步：必備基礎用品清單</strong><br>
+          • 飲食：雙碗不鏽鋼/陶瓷食盆、自動流動飲水機、原園區習慣之過渡飼料。<br>
+          • 休息：溫暖好清潔的睡墊、具安全感的半封閉睡窩或外出航空箱。<br>
+          • 排泄：貓砂盆（長度需為貓身長1.5倍以上）或狗狗加厚尿布墊。<br>
+          • 娛樂：益智漏食玩具、磨牙骨或貓抓板，轉移剛換環境的緊繃注意力。</p>
+          <br>
+          <p><strong>第三步：前三天的靜音相處原則</strong><br>
+          帶回家前幾天請避免邀請親友熱鬧拜訪，給毛孩足夠時間安靜熟悉氣味與家庭作息。</p>
+        `
+      },
+      2: {
+        badge: "狗狗日常行為",
+        title: "狗狗定點如廁與籠內減敏訓練：用正向獎勵教出天使汪",
+        body: `
+          <p><strong>關鍵一：掌握如廁黃金時刻</strong><br>
+          幼犬或成犬剛到新家時，有三個最容易排泄的時機點：<strong>剛睡醒時</strong>、<strong>吃飽飯後 15~30 分鐘</strong>、以及<strong>激烈玩耍過後</strong>。在這些時刻主動將狗狗帶至預設尿墊區域。</p>
+          <br>
+          <p><strong>關鍵二：捕捉正確行為並立即給予高價值獎勵</strong><br>
+          當狗狗成功在尿墊上排泄的瞬間，立即用溫柔雀躍的聲音說「好棒！」，並在 3 秒內給予一小塊雞肉乾等極品零食。反覆強化正確位置的美好聯想。</p>
+          <br>
+          <p><strong>關鍵三：千千萬萬不要事後處罰</strong><br>
+          如果在客廳地上發現尿漬，千萬不要抓狗狗去聞或打罵，這只會讓狗狗誤以為「排泄這件事本身會挨打」，反而導致牠躲在床底下偷偷尿。只要默默用酵素清潔劑徹底去除氣味即可。</p>
+        `
+      },
+      3: {
+        badge: "貓咪適應指南",
+        title: "剛到家貓咪躲起來怎麼辦？三步驟陪伴貓咪度過警戒期",
+        body: `
+          <p><strong>理解貓咪天性：領地安全感</strong><br>
+          貓咪對氣味極度敏感，換新環境會感到失去掌控權。剛回家的貓咪躲在床底、櫃子縫隙是完全健康的自我保護防禦機制。</p>
+          <br>
+          <p><strong>第一階段：設立「獨立隔離房」</strong><br>
+          不要一開始就讓新貓探索整間大屋子！先將貓咪安置在採光良好、安靜的客房或書房，裡面擺放齊全的貓砂盆、水盆、乾糧與抓板。</p>
+          <br>
+          <p><strong>第二階段：放低身段、視線避開</strong><br>
+          進房間添水換糧時，動作放輕，坐在地上滑手機或看書，不要強行用手伸手撈貓。讓貓咪看見「這個龐然大物不會傷害我」。</p>
+          <br>
+          <p><strong>第三階段：食物破冰</strong><br>
+          拿出肉泥或香濃主食罐，放在距離牠躲藏處一公尺處，當貓咪願意在你面前舔食，代表彼此信任的大門已經敞開！</p>
+        `
+      },
+      4: {
+        badge: "健康照護醫學",
+        title: "核心疫苗時程、體內外驅蟲與適齡絕育的健康指南",
+        body: `
+          <p><strong>一、定期疫苗防禦牆</strong><br>
+          • <strong>狗狗：</strong>基礎核心包含犬多合一（預防犬瘟熱、出血性腸炎、傳染性肝炎等）每年補強一劑，法定狂犬病疫苗每年強制施打。<br>
+          • <strong>貓咪：</strong>核心三聯疫苗（貓瘟、卡里西病毒、鼻氣管炎），即使足不出戶的室內貓，人類鞋底衣物也可能帶菌，務必維持抗體。</p>
+          <br>
+          <p><strong>二、每月預防性驅蟲不可少</strong><br>
+          心絲蟲是由蚊子叮咬傳播的致命寄生蟲，滴劑或口服心絲蟲藥物每 30 天需準時投藥一次；另外定期預防跳蚤、壁蝨與腸道絛蟲蛔蟲。</p>
+          <br>
+          <p><strong>三、適齡絕育的重大優點</strong><br>
+          毛孩家園送養的毛孩均已由專業獸醫完成絕育。絕育能完全避免母犬貓子宮蓄膿、乳腺腫瘤（致死率極高），並避免公犬貓前列腺肥大與發情躁動噴尿等行為問題，有助延長壽命 2~3 年以上。</p>
+        `
+      }
+    };
+
+    function openGuideModal(id) {
+      const data = guideArticles[id];
+      if (data) {
+        document.getElementById('modalGuideBadge').textContent = data.badge;
+        document.getElementById('modalGuideTitle').textContent = data.title;
+        document.getElementById('modalGuideBody').innerHTML = data.body;
+        document.getElementById('guideModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeGuideModal() {
+      document.getElementById('guideModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function closeModalOnOverlay(event, modalId) {
+      if (event.target.id === modalId) {
+        document.getElementById(modalId).classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    // 8. 領養申請表單送出驗證與提交回饋
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('applicantName').value.trim();
+      const pet = document.getElementById('targetPet').value;
+      const phone = document.getElementById('applicantPhone').value.trim();
+
+      if (!name || !pet || !phone) {
+        showToast('請完整填寫必填欄位！');
+        return;
+      }
+
+      // 模擬表單送出成功
+      alert(`🎉 恭喜您，${name}！\n\n您的「${pet}」領養申請意願已成功送出！\n毛孩家園審核志工將於 2-3 個工作天內透過電話 (${phone}) 與您聯絡確認訪談時間。\n\n謝謝您選擇以領養代替購買，給浪浪一個溫暖幸福的家！`);
+
+      e.target.reset();
+      showToast('領養申請已成功提交，志工將盡快聯繫您！');
+    }
+
+    // 9. FAQ 手風琴切換
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const isOpen = item.classList.contains('open');
+
+        // 關閉其他展開項目
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+
+        if (!isOpen) {
+          item.classList.add('open');
+        }
+      });
+    });
   </script>
 </body>
 </html>
